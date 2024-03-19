@@ -37,7 +37,7 @@ function App() {
         <Box title='computer'></Box>
       </div>
       <div className='main'>
-        <button onClick={() => play('scissros')}>가위</button>
+        <button onClick={() => play('scissor')}>가위</button>
         <button onClick={() => play('rock')}>바위</button>
         <button onClick={() => play('paper')}>보</button>
       </div>
