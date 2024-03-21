@@ -9,6 +9,7 @@ import Box from './component/Box';
 // 5. 3,4의 결과를 가지고 누가 이겼는지 승패를 따진다
 // 6. 승패의 결과에 따라 테두리 색이 바뀐다.(이기면 초록, 지면 빨강, 비기면 검은색)
 
+
 const choice = {
 	rock: {
 		name: 'Rock',
@@ -24,9 +25,11 @@ const choice = {
 	},
 };
 
+
+
 function App() {
-  const [userSelect, setUserSelect] = useState(null);
-  const [computerSelect, setComputerSelect] = useState(null);
+  const [userSelect, setUserSelect] = useState(choice.paper);
+  const [computerSelect, setComputerSelect] = useState(choice.paper);
   const [result, setResult] = useState("");
 
 	const play = (userChoice) => {
@@ -36,6 +39,8 @@ function App() {
     setResult(judgement(choice[userChoice], computerChoice));
   };
 
+
+	
   const judgement = (user, computer) => {
 		/* 게임 로직
         user == computer >> tie 

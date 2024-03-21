@@ -1,35 +1,20 @@
 import React from 'react';
 
-
-
-
 const Box = (props) => {
-	const resultClassName = () => {
-		if (props.result) {
-			switch (props.result) {
-				case 'win':
-					return 'border-win';
-				case 'lose':
-					return 'border-lose';
-				case 'tie':
-					return 'border-tie';
-				default:
-					return '';
-			}
-		}
-		return ''; // 결과가 없을 때는 테두리 클래스를 적용하지 않습니다.
-	};
+	console.log('props', props);
 	return (
-		<div className={`box ${resultClassName()}`}>
+		<div className={`box ${props.result}`}>
 			<h1>{props.title}</h1>
 			<img
 				className="item-img"
 				src={props.item && props.item.img}
-				alt="가위바위보"
+				alt={props.item ? props.item.name : 'result'}
 			></img>
-			<h2>{props.result}</h2>
+			<h2>{props.result.charAt(0).toUpperCase() + props.result.slice(1)}</h2>
 		</div>
 	);
 };
+
+
 
 export default Box;
